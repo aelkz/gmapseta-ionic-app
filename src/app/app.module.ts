@@ -9,6 +9,13 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {BestRouteModule} from "../components/best-route/best-route.module";
+
+// /--------------------------------------------------\
+// | Application Module [app.module.ts]               |
+// |--------------------------------------------------|
+// | Add your application modules here!               |
+// \--------------------------------------------------/
 
 @NgModule({
   declarations: [
@@ -19,6 +26,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+    BestRouteModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],

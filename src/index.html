@@ -2,17 +2,21 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <title>Ionic App</title>
+  <title>GMaps ETA App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
+  <meta name="author" content="Raphael Abreu | github.com/aelkz">
 
   <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#4e8ef7">
- 
+
   <!-- cordova.js required for cordova apps -->
   <script src="cordova.js"></script>
+
+  <!-- additional js libraries -->
+  <script src="assets/js/jquery-3.2.1.min.js"></script>
 
   <!-- un-comment this code to enable service worker
   <script>
@@ -23,8 +27,20 @@
     }
   </script>-->
 
+  <!-- stylesheets -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="build/main.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
 
+  <!-- fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+  <!-- google fonts call. font library: Open Sans & Raleway -->
+  <link href="http://fonts.googleapis.com/css?family=Raleway:400,300" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -36,6 +52,9 @@
 
   <!-- The bundle js is generated during the build process -->
   <script src="build/main.js"></script>
+
+  <!-- additional js libraries -->
+  <script src="assets/js/bootstrap.min.js"></script>
 
 </body>
 </html>
