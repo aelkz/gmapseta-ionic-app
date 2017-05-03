@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import {BestRouteComponent} from "./best-route.component";
+import {BestRouteComponent} from "./best-route/best-route.component";
 
 // /--------------------------------------------------\
-// | Component Module [best-route.module.ts]          |
+// | Component Module [components.module.ts]          |
 // |--------------------------------------------------|
 // | First gadget for this mobile application         |
 // \--------------------------------------------------/
@@ -18,4 +18,4 @@ import {BestRouteComponent} from "./best-route.component";
   exports: [BestRouteComponent],
   declarations: [BestRouteComponent],
 })
-export class BestRouteModule { }
+export class ComponentsModule { }

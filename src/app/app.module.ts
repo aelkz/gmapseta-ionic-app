@@ -9,7 +9,7 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {BestRouteModule} from "../components/best-route/best-route.module";
+import {ComponentsModule} from "../components/components.module";
 
 // /--------------------------------------------------\
 // | Application Module [app.module.ts]               |
@@ -26,7 +26,7 @@ import {BestRouteModule} from "../components/best-route/best-route.module";
   ],
   imports: [
     BrowserModule,
-    BestRouteModule,
+    ComponentsModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
