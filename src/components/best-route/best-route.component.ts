@@ -14,7 +14,6 @@ export class BestRouteComponent {
     this.initializeComponent();
   }
 
-  private initializeComponent(): void {
-  }
+  private initializeComponent(): void {}
 
  }
