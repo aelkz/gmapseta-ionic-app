@@ -454,6 +454,12 @@ digiclock#small {
   text-align:center;
 }
 
+#navigation-map {
+  position: relative;
+  top: -20px;
+  height: 130px;
+}
+
 /**********Mail Style Configuration**********/
 
 .framemail {
