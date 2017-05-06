@@ -1,37 +1,66 @@
 import { Injectable } from '@angular/core';
+import { Http, Response, Headers } from '@angular/http';
+import { Info } from "../info.model";
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import {Observable} from "rxjs";
 
 @Injectable()
 export class BestRouteService {
 
-  constructor() {
+  private baseUrl: string = 'http://198.199.67.245/gmapsetaapp/info/best';
+
+  constructor(private http : Http) { }
+
+  get(id: number): Observable<Info> {
+    let info$ = this.http
+      .get(`${this.baseUrl}/${id}`, {headers: this.getHeaders()})
+      .map(mapInfo)
+      .catch(handleError);
+    return info$;
   }
 
-  public salvar(perfil: any) {
-    // perfil.id = Math.floor(Math.random() * 100) + 5;
-    // perfil.descricao = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempus, quam at faucibus tempus, metus turpis eleifend enim, in fringilla felis dui non dolor.";
-    // perfil.situacao = { "id": 1, "descricao": "Ativo" };
-    //
-    // this.perfils.push(perfil);
+  private getHeaders(){
+    let headers = new Headers();
+    headers.append('Accept', 'application/json');
+    return headers;
   }
 
-  public getPerfils(): any[] {
-    //return this.perfils;
-    return null;
-  }
+}
 
-  public getPerfil(id: any): any {
-    //return this.perfils.filter(perfil => perfil.id == id)[0];
-    return null;
-  }
+function mapInfo(response:Response): Info{
+  return toInfo(response.json());
+}
 
-  public isAtivo(perfil: any): boolean {
-    //return perfil.situacao.id === 1;
-    return false;
-  }
+function toInfo(response:any): Info{
+  let info = <Info>({
+    id: response.id,
+    name: response.name,
+    description: response.description,
+    kilometers: response.kilometers,
+    routeUrl: response.routeUrl,
+    startingPoint: response.startingPoint,
+    endingPoint: response.endingPoint,
+    arriveTime: response.arriveTime,
+    trafficTime: response.trafficTime
+  });
+  console.log('response parsed:', info);
+  return info;
+}
 
-  public isInativo(perfil: any): boolean {
-    //return perfil.situacao.id === 2;
-    return false;
-  }
+// To avoid breaking the rest of our app, I extract the id from the info url
+function extractId(infoData:any){
+  let extractedId = infoData.url.replace('http://foo/api/info/','').replace('/','');
+  return parseInt(extractedId);
+}
 
+// this could also be a private method of the component class
+function handleError (error: any) {
+  // log error
+  // could be something more sofisticated
+  let errorMsg = error.message || `Yikes! There was was a problem with our hyperdrive device and we couldn't retrieve your data!`
+  console.error(errorMsg);
+
+  // throw an application level error
+  return Observable.throw(errorMsg);
 }
