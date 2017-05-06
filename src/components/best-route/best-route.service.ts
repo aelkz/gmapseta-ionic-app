@@ -8,6 +8,7 @@ import {Observable} from "rxjs";
 @Injectable()
 export class BestRouteService {
 
+  //private baseUrl: string = 'http://localhost:3000/info/best';
   private baseUrl: string = 'http://198.199.67.245/gmapsetaapp/info/best';
 
   constructor(private http : Http) { }
@@ -17,12 +18,20 @@ export class BestRouteService {
       .get(`${this.baseUrl}/${id}`, {headers: this.getHeaders()})
       .map(mapInfo)
       .catch(handleError);
+
     return info$;
   }
 
   private getHeaders(){
     let headers = new Headers();
     headers.append('Accept', 'application/json');
+ 
+    headers.append("Access-Control-Allow-Origin", "http://localhost:8100");
+    headers.append("Access-Control-Allow-Credentials", "true");
+    headers.append("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
+    headers.append("Access-Control-Max-Age", "3600");
+    headers.append("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With, Origin, remember-me");
+
     return headers;
   }
 
