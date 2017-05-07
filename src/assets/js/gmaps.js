@@ -9,8 +9,21 @@
 document.onreadystatechange = function () {
   if (document.readyState == "complete") {
     // document is ready. Do your stuff here
+    loadMap();
+  }
+}
 
-    // Enabling new cartography and themes
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+    'Error: The Geolocation service failed.' :
+    'Error: Your browser doesn\'t support geolocation.');
+}
+
+function initMap() { }
+
+function loadMap() {
+  // Enabling new cartography and themes
     google.maps.visualRefresh = true;
 
     var pos = {lat: -0.0, lng: 0.0};
@@ -44,7 +57,7 @@ document.onreadystatechange = function () {
 
         console.log(pos.lat);
         console.log(pos.lng);
-        //infoWindow.setPosition(pos);
+        infoWindow.setPosition(pos);
         map.setCenter(pos);
         infoWindow.open(map, marker);
 
@@ -55,15 +68,4 @@ document.onreadystatechange = function () {
       // Browser doesn't support Geolocation
       handleLocationError(false, infoWindow, map.getCenter());
     }
-
-  }
 }
-
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(browserHasGeolocation ?
-    'Error: The Geolocation service failed.' :
-    'Error: Your browser doesn\'t support geolocation.');
-}
-
-function initMap() { }

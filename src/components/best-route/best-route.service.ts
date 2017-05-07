@@ -25,13 +25,6 @@ export class BestRouteService {
   private getHeaders(){
     let headers = new Headers();
     headers.append('Accept', 'application/json');
- 
-    headers.append("Access-Control-Allow-Origin", "http://localhost:8100");
-    headers.append("Access-Control-Allow-Credentials", "true");
-    headers.append("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
-    headers.append("Access-Control-Max-Age", "3600");
-    headers.append("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With, Origin, remember-me");
-
     return headers;
   }
 
