@@ -17,7 +17,9 @@
 
   <!-- additional js libraries -->
   <script src="assets/js/jquery-3.2.1.min.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZ9yVeau18-qAqqxAidwA_M8ZW1IEgPXQ&callback"></script>
+  <!-- cannot be async defer because the objects are needed at component initialization -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZ9yVeau18-qAqqxAidwA_M8ZW1IEgPXQ&callback"></script>
+  <script src="assets/js/gmaps.js"></script>
 
   <!-- un-comment this code to enable service worker
   <script>
@@ -56,7 +58,6 @@
 
   <!-- additional js libraries -->
   <script src="assets/js/bootstrap.min.js"></script>
-  <script src="assets/js/gmaps.js"></script>
 
 </body>
 </html>

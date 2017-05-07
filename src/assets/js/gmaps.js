@@ -6,10 +6,20 @@
 
 // https://developers.google.com/maps/documentation/javascript/infowindows?hl=pt-br
 
+var myExtObject = (function() {
+  console.log('myExtObject called.');
+  return {
+    func1: function() {
+      console.log('func1 called.');
+      loadMap();
+    }
+  }
+})(myExtObject||{})
+
 document.onreadystatechange = function () {
   if (document.readyState == "complete") {
     // document is ready. Do your stuff here
-    loadMap();
+    //loadMap();
   }
 }
 
