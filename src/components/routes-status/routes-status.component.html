@@ -1,0 +1,25 @@
+<!-- row-of-blocks/ -->
+<div class="row">
+  <!-- ui-gadget -->
+  <div class="half-unit">
+    <div class="dtitle" *ngIf="status">{{status.startingPoint}} to {{status.endingPoint}} routes</div>
+    <div class="dtitle" *ngIf="!status">loading data...</div>
+    <hr>
+    <div class="cont" *ngIf="status">
+      <div class="info-aapl">
+
+        <ul>
+          <li *ngFor="let obj of statusList">
+            <span class="{{obj.color}}" style="height: {{obj.fillPercent}};">1</span><span class="{{obj.selected ? 'timechoosen' : 'time'}}">{{obj.trafficTime}}</span>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+    <div class="centered-unit" *ngIf="!status">
+      <p>
+      	<img src="assets/img/red-lg-loader.gif" alt="reloading routes status information" style="position:relative; top: -75px; height: 200px; width: 200px;" />
+      </p>
+    </div>
+  </div><!-- /ui-gadget -->
+</div><!-- /row-of-blocks -->
