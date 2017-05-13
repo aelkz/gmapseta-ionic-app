@@ -3,11 +3,11 @@ import { RoutesStatusService } from './routes-status.service';
 import { Status } from './../status.model';
 
 @Component({
-  selector: 'app-best-route',
+  selector: 'app-routes-status',
   templateUrl: 'routes-status.component.html',
   providers: [RoutesStatusService]
 })
-export class BestRouteComponent implements OnInit {
+export class RoutesStatusComponent implements OnInit {
   public status: Status;
   public statusList: Status[] = [];
   public errorMessage: string = '';

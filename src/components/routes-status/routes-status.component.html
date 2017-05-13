@@ -10,7 +10,7 @@
 
         <ul>
           <li *ngFor="let obj of statusList">
-            <span class="{{obj.color}}" style="height: {{obj.fillPercent}};">1</span><span class="{{obj.selected ? 'timechoosen' : 'time'}}">{{obj.trafficTime}}</span>
+            <span [style.background-color]="obj.color" [style.border]="obj.selected ? '1px solid #63D0FF' : '0px'" [style.height]="obj.fillPercent">{{obj.id}}</span><span class="{{obj.selected ? 'timechoosen' : 'time'}}">{{obj.trafficTime}}</span>
           </li>
         </ul>
 

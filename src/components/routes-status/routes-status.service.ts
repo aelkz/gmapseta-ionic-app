@@ -30,7 +30,8 @@ export class RoutesStatusService {
 }
 
 function mapStatusList(response:Response): Status[] {
-  return response.json().results.map(toStatus)
+  console.log(response);
+  return response.json().map(toStatus)
 }
 
 function mapStatus(response:Response): Status{
@@ -41,11 +42,10 @@ function toStatus(response:any): Status{
   let status = <Status>({
     id: response.id,
     name: response.name,
-    description: response.description,
     kilometers: response.kilometers,
     startingPoint: response.startingPoint,
     endingPoint: response.endingPoint,
-    arriveTime: response.arriveTime,
+    arrivalTime: response.arrivalTime,
     trafficTime: response.trafficTime,
     selected: response.selected,
     color: response.color,
@@ -55,7 +55,7 @@ function toStatus(response:any): Status{
   return status;
 }
 
-// To avoid breaking the rest of our app, I extract the id from the info url
+// To avoid breaking the rest of our app, I extract the id from the status url
 function extractId(statusData:any){
   let extractedId = statusData.url.replace('http://foo/api/status/','').replace('/','');
   return parseInt(extractedId);

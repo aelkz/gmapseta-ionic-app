@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 
 import { BestRouteComponent } from "./best-route/best-route.component";
+import { RoutesStatusComponent } from "./routes-status/routes-status.component";
 import { NavigationMapComponent } from "./navigation-map/navigation-map.component";
 
 // /--------------------------------------------------\
@@ -18,7 +19,7 @@ import { NavigationMapComponent } from "./navigation-map/navigation-map.componen
     FormsModule,
     HttpModule
   ],
-  exports: [BestRouteComponent, NavigationMapComponent],
-  declarations: [BestRouteComponent, NavigationMapComponent],
+  exports: [BestRouteComponent, RoutesStatusComponent, NavigationMapComponent],
+  declarations: [BestRouteComponent, RoutesStatusComponent, NavigationMapComponent],
 })
 export class ComponentsModule { }
