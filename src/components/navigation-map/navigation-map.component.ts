@@ -1,7 +1,7 @@
 import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { NavigationMapService } from './navigation-map.service';
 
-declare var myExtObject: any;
+declare var googleMapsObject: any;
 
 @Component({
   selector: 'app-navigation-map',
@@ -21,13 +21,12 @@ export class NavigationMapComponent implements AfterViewInit, OnInit {
 
   private initializeComponent(): void { }
 
-  CallFunction1() {
-    console.log('CallFunction1 called.');
-    myExtObject.func1();
+  init() {
+    googleMapsObject.init();
   }
 
   ngOnInit(){
-    this.CallFunction1();
+    this.init();
   }
 
   ngAfterViewInit(): void { 

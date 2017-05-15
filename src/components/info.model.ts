@@ -8,7 +8,6 @@ export interface Info{
   endingPoint: string;
   arriveTime: string;
   trafficTime: string;
-  selected: boolean;
   // it is optional because I know it
   // doesn't exist in the API that we will
   // consume in the next exercise :)
