@@ -1,3 +1,9 @@
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content refreshingSpinner="none"></ion-refresher-content>
+  </ion-refresher>
+</ion-content>
+
 <!-- row-of-blocks/ -->
 <div class="row">
   <!-- ui-gadget -->
@@ -6,11 +12,16 @@
     <div class="dtitle" *ngIf="!status">loading data...</div>
     <hr>
     <div class="cont" *ngIf="status">
+      <p *ngIf="routeID != 0" style="position: relative; top: -10px;">
+        #{{routeID}}&nbsp;|&nbsp;{{routeName}}&nbsp;<img src="assets/img/pointer-small.png" alt=""/>&nbsp;{{routeKilometers}} km
+      </p>
       <div class="info-aapl">
-
         <ul>
-          <li *ngFor="let obj of statusList">
-            <span [style.background-color]="obj.color" [style.border]="obj.selected ? '1px solid #63D0FF' : '0px'" [style.height]="obj.fillPercent">{{obj.id}}</span><span class="{{obj.selected ? 'timechoosen' : 'time'}}">{{obj.trafficTime}}</span>
+          <li *ngFor="let obj of statusList" (click)="showRouteInfo(obj)">
+            <span [style.background-color]="obj.color"
+              [style.border]="obj.selected ? '1px solid #63D0FF' : '0px'"
+              [style.height]="obj.fillPercent">{{obj.id}}</span>
+            <span class="{{obj.selected ? 'timechoosen' : 'time'}}">{{obj.trafficTime}}</span>
           </li>
         </ul>
 

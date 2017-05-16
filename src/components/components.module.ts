@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
+import { IonicModule } from 'ionic-angular';
 
 import { BestRouteComponent } from "./best-route/best-route.component";
 import { RoutesStatusComponent } from "./routes-status/routes-status.component";
@@ -17,7 +18,9 @@ import { NavigationMapComponent } from "./navigation-map/navigation-map.componen
   imports: [
     CommonModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    IonicModule.forRoot(BestRouteComponent),
+    IonicModule.forRoot(RoutesStatusComponent)
   ],
   exports: [BestRouteComponent, RoutesStatusComponent, NavigationMapComponent],
   declarations: [BestRouteComponent, RoutesStatusComponent, NavigationMapComponent],

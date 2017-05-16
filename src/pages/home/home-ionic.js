@@ -15,7 +15,7 @@ var HelloIonicPage = (function () {
 HelloIonicPage = __decorate([
     core_1.Component({
         selector: 'page-hello-ionic',
-        templateUrl: 'hello-ionic.html'
+        templateUrl: 'home-ionic.html'
     })
 ], HelloIonicPage);
 exports.HelloIonicPage = HelloIonicPage;

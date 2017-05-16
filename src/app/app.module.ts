@@ -3,7 +3,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
+import { HomeIonicPage } from '../pages/home/home-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 
@@ -20,7 +20,7 @@ import { ComponentsModule } from "../components/components.module";
 @NgModule({
   declarations: [
     MyApp,
-    HelloIonicPage,
+    HomeIonicPage,
     ItemDetailsPage,
     ListPage
   ],
@@ -32,7 +32,7 @@ import { ComponentsModule } from "../components/components.module";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HelloIonicPage,
+    HomeIonicPage,
     ItemDetailsPage,
     ListPage
   ],

@@ -1,22 +1,29 @@
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content refreshingSpinner="none"></ion-refresher-content>
+  </ion-refresher>
+</ion-content>
+
 <!-- row-of-blocks/ -->
 <div class="row">
   <!-- ui-gadget -->
   <div class="half-unit">
-    <div class="dtitle">best route</div>
+    <div class="dtitle" *ngIf="info">best route</div>
+    <div class="dtitle" *ngIf="!info">loading data...</div>
     <hr>
     <div class="centered-unit" *ngIf="info">
       <p>
-      	<a href="{{info.routeUrl}}" target="_blank"><img src="assets/img/geo_get_route-128.png" alt="start navigation" style="position:relative; height: 45px; width: 45px;" /></a>
-      	<br>
-      	<b>#{{info.id}}</b> | {{info.name}}
+        <a href="{{info.routeUrl}}" target="_blank"><img src="assets/img/geo_get_route-128.png" alt="start navigation" style="position:relative; height: 45px; width: 45px;" /></a>
+        <br>
+        <b>#{{info.id}}</b> | {{info.name}}
       </p>
       <p>
-      	<img src="assets/img/up-small.png" alt="">{{info.arriveTime}}.&nbsp;&nbsp;&nbsp;<img src="assets/img/down-small.png" alt=""> {{info.trafficTime}}.&nbsp;&nbsp;&nbsp;<img src="assets/img/pointer-small.png" alt=""> {{info.kilometers}} km
+        <img src="assets/img/up-small.png" alt="" />{{info.arriveTime}}.&nbsp;&nbsp;&nbsp;<img src="assets/img/down-small.png" alt="" /> {{info.trafficTime}}.&nbsp;&nbsp;&nbsp;<img src="assets/img/pointer-small.png" alt="" /> {{info.kilometers}} km
       </p>
     </div>
     <div class="centered-unit" *ngIf="!info">
       <p>
-      	<img src="assets/img/red-lg-loader.gif" alt="reloading best route information" style="position:relative; top: -75px; height: 200px; width: 200px;" />
+        <img src="assets/img/red-lg-loader.gif" alt="reloading best route information" style="position:relative; top: -75px; height: 200px; width: 200px;" />
       </p>
     </div>
   </div><!-- /ui-gadget -->
